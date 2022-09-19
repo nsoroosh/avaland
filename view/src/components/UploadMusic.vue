@@ -29,21 +29,6 @@ template {
   display: inline;
 }
 
-.row {
-  display: flex;
-  flex-direction: row;
-  padding: 0px;
-  gap: 60px;
-}
-
-.col {
-  display: inline-grid;
-  flex-direction: column;
-  padding: 0px;
-  gap: 30px;
-  width: 31%;
-}
-
 .btn-active {
   padding: 10px 64px;
   background: linear-gradient(106.97deg, #fe8a48 -11.29%, #fda53e 91.8%);

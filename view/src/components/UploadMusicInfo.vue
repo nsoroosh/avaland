@@ -56,19 +56,20 @@
             <div class="form-group browse-button">
               <!-- <label for="poster" class="music-info__label">بارگذاری عکس</label> -->
               <img src="../assets/img/browse.png" alt="" id="loadPoster" />
-              <img src="../assets/img/icon/linear/Camera.png" alt="" id="cameraIcon" />
-              <button
-                class="poster"
-                onclick="document.getElementById('poster').click()"
-              >
-                بارگذاری عکس
-              </button>
-              <input
-                type="file"
-                id="poster"
-                name="poster"
-                class="music-info__input"
-              />
+              <div class="music-info__desc-browse">
+                <img
+                  src="../assets/img/icon/linear/Camera.png"
+                  alt=""
+                  id="cameraIcon"
+                />
+                <button
+                  class="poster"
+                  onclick="document.getElementById('poster').click()"
+                >
+                  بارگذاری عکس
+                </button>
+                <input type="file" id="poster" name="poster" />
+              </div>
             </div>
           </div>
         </div>
@@ -79,7 +80,8 @@
             type="text"
             id="lyric"
             name="lyric"
-            class="music-info__input">
+            class="music-info__input"
+          >
 لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
           </textarea>
         </div>
@@ -101,6 +103,50 @@ export default {};
 $primary-color: #fc8f22;
 $secondry-color: #999999;
 $background-color: #010101;
+
+.row {
+  display: flex;
+  flex-direction: row;
+  padding: 0px;
+  gap: 60px;
+}
+
+.col {
+  display: inline-grid;
+  flex-direction: column;
+  padding: 0px;
+  gap: 30px;
+  width: 31%;
+}
+
+.btn-active {
+  padding: 10px 64px;
+  background: linear-gradient(106.97deg, #fe8a48 -11.29%, #fda53e 91.8%);
+  border-radius: 8px;
+  order: 1;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  color: #ffffff;
+  text-align: center;
+  border: none;
+  height: 56px;
+}
+
+.btn-disable {
+  padding: 10px 64px;
+  background: rgba(70, 70, 70, 0.3);
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  height: 56px;
+  color: #ffffff;
+  text-align: center;
+  border: none;
+  margin-right: 20px;
+}
 
 .music-info {
   margin-top: 50px;
@@ -202,10 +248,6 @@ $background-color: #010101;
     height: 200px;
   }
 
-  #poster {
-    display: none;
-  }
-
   .poster {
     position: absolute;
     bottom: 0px;
@@ -227,8 +269,19 @@ $background-color: #010101;
     border: none;
   }
 
+  &__desc-browse {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+
   .browse-button {
     position: relative;
+  }
+
+  #poster {
+    display: none;
   }
 
   #cameraIcon {
