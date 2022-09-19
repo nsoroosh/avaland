@@ -51,7 +51,7 @@ header {
   align-items: center;
   justify-content: center;
   height: 160px;
-  // width: 100%;
+  width: 100%;
 
   .head {
     width: 100%;

@@ -1,18 +1,19 @@
 <template>
   <div class="container">
     <SearchboxHeader />
-    <main class="content"></main>
-    <PlayerContent />
+    <main class="content">
+      <template>
+        <slot name="content"></slot>
+      </template>
+    </main>
   </div>
 </template>
 
 <script>
 import SearchboxHeader from "./SearchboxHeader.vue";
-import PlayerContent from "./PlayerContent.vue";
 export default {
   components: {
     SearchboxHeader,
-    PlayerContent,
   },
 };
 </script>
@@ -33,5 +34,6 @@ $background-color: #010101;
 .content {
   direction: rtl;
   margin: 0px 3%;
+  // height: 100vh;
 }
 </style>

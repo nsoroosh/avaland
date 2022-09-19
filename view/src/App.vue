@@ -1,17 +1,19 @@
 <template>
   <SidebarNavigation />
-  <MainContent />
+  <!-- <PlayListArchive /> -->
+  <!-- <UploadMusic /> -->
 </template>
 
 <script>
 import SidebarNavigation from "./components/SidebarNavigation.vue";
-import MainContent from "./components/MainContent.vue";
+// import MainContent from "./components/MainContent.vue";
+// import PlayListArchive from "./components/PlayListArchive.vue";
+// import UploadMusic from "./components/UploadMusic.vue";
 
 export default {
   name: "App",
   components: {
     SidebarNavigation,
-    MainContent,
   },
 };
 </script>
@@ -85,6 +87,18 @@ body {
   font-family: "Peyda";
   font-style: normal;
   width: 100%;
-  flex-direction: column;
+  flex-direction: row;
 }
+
+input,
+textarea,
+p,
+div,
+label,
+ul,
+li,
+button {
+    font-family: 'Peyda';
+}
+
 </style>
