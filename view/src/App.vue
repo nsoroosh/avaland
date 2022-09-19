@@ -2,7 +2,7 @@
   <SidebarNavigation />
   <!-- <PlayListArchive /> -->
   <!-- <UploadMusic /> -->
-  <UploadMusic />
+  <MusicDetails />
 </template>
 
 <script>
@@ -10,13 +10,13 @@ import SidebarNavigation from "./components/SidebarNavigation.vue";
 // import MainContent from "./components/MainContent.vue";
 // import PlayListArchive from "./components/PlayListArchive.vue";
 // import UploadMusic from "./components/UploadMusic.vue";
-import UploadMusic from "./components/MusicDetails.vue";
+import MusicDetails from "./components/MusicDetails.vue";
 
 export default {
   name: "App",
   components: {
     SidebarNavigation,
-    UploadMusic
+    MusicDetails
   },
 };
 </script>

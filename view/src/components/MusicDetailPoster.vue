@@ -23,7 +23,12 @@
       <div class="poster__share-btn">
         <img src="../assets/img/icon/linear/heart.svg" alt="" />
         <img src="../assets/img/icon/outline/share.png" alt="" />
-        <img src="../assets/img/icon/bold/more.svg" alt="" class="more-icon" />
+        <img
+          src="../assets/img/icon/bold/more.svg"
+          alt=""
+          class="more-icon"
+          @click="clickMainModal()"
+        />
       </div>
     </div>
     <div class="poster__lyrics">
@@ -46,11 +51,49 @@
         />
       </span>
     </div>
+    <MusicDetailModal class="poster__options" v-if="openMainModal" />
+    <UploadMusicInfo class="poster__edit-modal" v-if="openEditModal" />
+    <DeleteMusicModal class="poster__delete-modal" v-if="openTrashModal" />
+    <AddToPlaylistModal class="poster__playlist-modal" v-if="openPlaylistModal" />
   </section>
 </template>
 
 <script>
-export default {};
+import MusicDetailModal from "./MusicDetailModal.vue";
+import UploadMusicInfo from "./UploadMusicInfo.vue";
+import DeleteMusicModal from "./DeleteMusicModal.vue";
+import AddToPlaylistModal from "./AddToPlaylistModal.vue";
+
+export default {
+  data() {
+    return {
+      openMainModal: false,
+      openEditModal: false,
+      openTrashModal: false,
+      openPlaylistModal: true,
+    };
+  },
+  methods: {
+    clickMainModal: () => {
+      this.openMainModal = !this.openMainModal;
+    },
+    clickEditModal: () => {
+      this.openEditModal = !this.openEditModal;
+    },
+    clickTrashModal: () => {
+      this.openTrashModal = !this.openTrashModal;
+    },
+    clickPlaylistModal: () => {
+      this.openPlaylistModal = !this.openPlaylistModal;
+    },
+  },
+  components: {
+    MusicDetailModal,
+    UploadMusicInfo,
+    DeleteMusicModal,
+    AddToPlaylistModal
+  },
+};
 </script>
 
 <style lang="scss">
@@ -66,6 +109,7 @@ $background-color: #010101;
   height: 320px;
   display: flex;
   align-items: center;
+  position: relative;
 
   &__image {
     width: 264px;
@@ -150,6 +194,39 @@ $background-color: #010101;
       width: 36px;
       height: 36px;
     }
+  }
+
+  &__options {
+    position: absolute;
+    right: 472px;
+    top: 244px;
+  }
+
+  &__edit-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 48px;
+
+    position: absolute;
+    width: 1262px;
+    height: 775px;
+    right: 298px;
+    top: 124px;
+  }
+
+  .music-info__content {
+    background: #353535 !important;
+    z-index: 999;
+    order: 999;
+    // width: 1262px;
+    // right: 0px;
+    // top: 0px;
+  }
+
+  .music-info__title {
+    display: none;
   }
 }
 </style>
