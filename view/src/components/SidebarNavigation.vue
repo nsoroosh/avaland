@@ -5,7 +5,7 @@
     <div class="nav">
       <div class="nav__item" :class="(index==0) && 'nav__item--active'" v-for="(menu, index) in menus" :key="index">
         <p class="nav__desc">{{ menu.name }}</p>
-        <img :src="menu.icon" alt="" class="nav__icon" />
+        <img :src="require(`../assets/img/${menu.icon}`)" alt="" class="nav__icon" />
       </div>
     </div>
   </aside>
