@@ -173,8 +173,8 @@
 export default {
   data() {
     return {
-      createPlaylistModal: false,
-      addPlaylistModal: true,
+      createPlaylistModal: true,
+      addPlaylistModal: false,
     };
   },
 };
