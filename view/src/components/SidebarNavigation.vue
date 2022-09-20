@@ -3,25 +3,60 @@
     <img src="../assets/logo.png" alt="" />
 
     <div class="nav">
-      <div class="nav__item" :class="(index==0) && 'nav__item--active'" v-for="(menu, index) in menus" :key="index">
+      <div
+        class="nav__item"
+        :class="index == 0 && 'nav__item--active'"
+        v-for="(menu, index) in menus"
+        :key="index"
+      >
         <p class="nav__desc">{{ menu.name }}</p>
-        <img :src="require(`../assets/img/${menu.icon}`)" alt="" class="nav__icon" />
+        <img
+          :src="require(`../assets/img/${menu.icon}`)"
+          alt=""
+          class="nav__icon"
+        />
       </div>
     </div>
   </aside>
 </template>
 
-<script>
-import { mapState } from "vuex";
-export default {
-  computed: {
-    ...mapState("valueStore", ["menus"]),
+<script setup>
+const menus = [
+  {
+    name: "صفحه اصلی",
+    icon: "icon/linear/home-2.svg",
+    link: "/",
   },
-};
+  {
+    name: "جستجو",
+    icon: "icon/linear/discover.svg",
+    link: "/search",
+  },
+  {
+    name: "پخش آهنگ",
+    icon: "icon/linear/play.svg",
+    link: "/playmusic",
+  },
+  {
+    name: "محبوب ترین ها",
+    icon: "icon/linear/heart.svg",
+    link: "/favorites",
+  },
+  {
+    name: "لیست پخش منتخب",
+    icon: "icon/linear/receipt-square.svg",
+    link: "/playlists",
+  },
+  {
+    name: "آپلود آهنگ",
+    icon: "icon/linear/frame.svg",
+    link: "/upload",
+  },
+];
 </script>
 
 <style lang="scss">
-$primary-color: #FC8F22;
+$primary-color: #fc8f22;
 $secondry-color: #999999;
 $background-color: #010101;
 
