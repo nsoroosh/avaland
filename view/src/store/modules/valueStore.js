@@ -25,7 +25,8 @@ const value = {
                 name: "آپلود آهنگ",
                 icon: "../assets/img/icon/linear/frame.svg"
             }
-        ]
+        ],
+        
     },
     getters: {
 
