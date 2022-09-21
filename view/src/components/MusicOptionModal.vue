@@ -6,7 +6,7 @@
     </div>
     <div class="option-modal__edit">
       <img src="../assets/img/icon/outline/edit.svg" alt="" />
-      تغییر نام لیست
+      اضافه کردن به لیست پخش
     </div>
   </div>
 </template>
@@ -26,8 +26,8 @@ props:{
 .option-modal {
     color: white;
     position: absolute;
-    // display: none;
-    width: 150px;
+    display: none;
+    width: 250px;
     height: 82px;
     left: 10.5px;
     bottom: 18px;

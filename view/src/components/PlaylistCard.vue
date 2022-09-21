@@ -3,8 +3,10 @@
     <img :src="require(`@/assets/img/posters/${playlistImage}`)" alt="" />
     <div class="playlist__description">
       <div class="playlist__title">
-        <h3 class="playlist__h3">{{ playlistName }}</h3>
-        <span class="playlist__span">ایجاد شده توسط مصطفی</span>
+        <router-link to="/playlists/:id" class="playlist__h3">
+          <h3 class="playlist__h3">{{ playlistName }}</h3>
+        </router-link>
+        <span class="playlist__span">{{ playlistAuthor }}</span>
       </div>
 
       <div class="playlist__option" @click="showModal">
@@ -40,6 +42,7 @@ export default {
   props: {
     playlistName: String,
     playlistImage: String,
+    playlistAuthor: String,
   },
   components: {
     PlaylistOptionModal,
@@ -64,6 +67,7 @@ $background-color: #010101;
   }
   &__h3 {
     color: rgba(255, 255, 255, 1);
+    text-decoration: none;
   }
   &__span {
     color: $secondry-color;

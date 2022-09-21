@@ -9,20 +9,20 @@
         </slot>
       </template>
     </main>
-  <slot name="player"></slot>
   </div>
-  
-
+  <PlayerContent />
 </template>
 
 <script>
 import SearchboxHeader from "../components/SearchboxHeader.vue";
 import SidebarNavigation from "./SidebarNavigation.vue";
+import PlayerContent from "../components/PlayerContent.vue";
 
 export default {
   components: {
     SearchboxHeader,
     SidebarNavigation,
+    PlayerContent,
   },
 };
 </script>
