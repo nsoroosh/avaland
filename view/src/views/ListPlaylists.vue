@@ -1,8 +1,6 @@
 <template>
   <ListAllPlaylist />
-  <!-- <template v-slot:player> -->
-    <!-- <PlayerContent /> -->
-  <!-- </template> -->
+  
 </template>
 
 <script>

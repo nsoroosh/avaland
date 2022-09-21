@@ -9,8 +9,8 @@
     <th></th>
 
     <tbody>
-      <tr class="music-list__row">
-        <td class="music-list__num">۰۱</td>
+      <tr class="music-list__row" v-for="item in musiclist" :key="item.number">
+        <td class="music-list__num">{{item.number}}</td>
         <td class="music-list__title">
           <div class="music-list__music-profile">
             <img
@@ -19,15 +19,15 @@
               alt="MusicPoster"
             />
             <div class="music-list__artist-name">
-              <span class="music-list__name">دستبند</span>
-              <span class="music-list__artist">رهام</span>
+              <span class="music-list__name">{{item.name}}</span>
+              <span class="music-list__artist">{{item.artist}}</span>
             </div>
           </div>
         </td>
-        <td class="music-list__album-name">نماهنگ</td>
-        <td class="music-list__release-time">5 روز پیش</td>
+        <td class="music-list__album-name">{{item.albumname}}</td>
+        <td class="music-list__release-time">{{item.releasetime}}</td>
         <td>
-          <div class="music-list__time">۰۴:۴۲</div>
+          <div class="music-list__time">{{item.time}}</div>
         </td>
         <td>
           <img
@@ -35,11 +35,14 @@
             src="../assets/img/icon/linear/heart.svg"
           />
         </td>
-        <td>
-          <img
-            class="music-list__options"
-            src="../assets/img/icon/bold/more.svg"
-          />
+        <td >
+          <div class="music-list__btn-options" @click="showModal">
+            <img
+              class="music-list__options"
+              src="../assets/img/icon/bold/more.svg"
+            />
+            <MusicOptionModal :styles="count" />
+            </div>
         </td>
       </tr>
 
@@ -88,7 +91,73 @@
 </template>
 
 <script>
-export default {};
+import MusicOptionModal from "../components/MusicOptionModal.vue"
+export default {
+  data() {
+    return {
+      count: "none",
+      musiclist:[
+        {
+          number:'۰۱',
+          image:"profile1.jpg",
+          name:"دستبند",
+          artist:"رهام",
+          albumname:"نماهنگ",
+          releasetime:"5 روز پیش",
+          time:"۰۴:۴۲"
+        },
+        {
+          number:'۰۱',
+          image:"profile1.jpg",
+          name:"دستبند",
+          artist:"رهام",
+          albumname:"نماهنگ",
+          releasetime:"5 روز پیش",
+          time:"۰۴:۴۲",
+        },
+        {
+          number:'۰۱',
+          image:"profile1.jpg",
+          name:"دستبند",
+          artist:"رهام",
+          albumname:"نماهنگ",
+          releasetime:"5 روز پیش",
+          time:"۰۴:۴۲",
+        },
+        {
+          number:'۰۱',
+          image:"profile1.jpg",
+          name:"دستبند",
+          artist:"رهام",
+          albumname:"نماهنگ",
+          releasetime:"5 روز پیش",
+          time:"۰۴:۴۲",
+        },
+        {
+          number:'۰۱',
+          image:"profile1.jpg",
+          name:"دستبند",
+          artist:"رهام",
+          albumname:"نماهنگ",
+          releasetime:"5 روز پیش",
+          time:"۰۴:۴۲",
+        }
+      ]
+    };
+  },
+  methods: {
+    showModal() {
+      if (this.count == "none") {
+        this.count = "block";
+      } else {
+        this.count = "none";
+      }
+    },
+  },
+  components:{
+    MusicOptionModal
+  }
+};
 </script>
 
 <style lang="scss">
@@ -182,7 +251,9 @@ $background-color: #010101;
     width: 24px;
     height: 24px;
   }
-
+  &__btn-options{
+    position: relative;
+  }
   &__pause {
     position: absolute;
     right: 16px;

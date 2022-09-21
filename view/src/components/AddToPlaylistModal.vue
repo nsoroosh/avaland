@@ -177,8 +177,8 @@
 export default {
   data() {
     return {
-      createPlaylistModal: true,
-      addPlaylistModal: false,
+      createPlaylistModal: false,
+      addPlaylistModal: true,
     };
   },
 };
@@ -483,10 +483,11 @@ export default {
       flex-direction: column;
       align-items: flex-end;
       padding: 0px;
-      border-radius: 10px;
       order: 1;
       align-self: stretch;
       flex-grow: 0;
+      background: #3f3f3f;
+      border-radius: 10px;
     }
 
     &__music {
@@ -495,7 +496,7 @@ export default {
       align-items: flex-start;
       padding: 8px 12px;
       gap: 10px;
-      background: #3f3f3f;
+
       order: 0;
       align-self: stretch;
       flex-grow: 0;

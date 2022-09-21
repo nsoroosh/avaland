@@ -38,12 +38,18 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/UploadMusic.vue"),
   },
+  {
+    path: "/playlists/:id",
+    name: "playlistarchive",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/PlayListArchive.vue"),
+  },
 ];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
-  linkExactActiveClass:'nav__item--active'
+  linkExactActiveClass: "nav__item--active",
 });
 
 export default router;

@@ -11,11 +11,9 @@
       />
     </section>
   </main>
-  
 </template>
 
 <script>
-// import { component } from "vue/types/umd";
 import PlaylistCard from "./PlaylistCard.vue";
 export default {
   data() {
