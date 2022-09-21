@@ -7,12 +7,12 @@
 
 <script>
 import ListAllPlaylist from "../components/ListAllPlaylist.vue";
-// import PlayerContent from "../components/PlayerContent.vue";
+
 
 export default {
   components: {
     ListAllPlaylist,
-    // PlayerContent,
+   
   },
 };
 </script>

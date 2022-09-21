@@ -52,7 +52,7 @@ $background-color: #010101;
   direction: ltr;
   background-color: rgba(41, 41, 41, 0.8);
   height: 90px;
-  width: 100vw;
+  width: 100%;
   position: fixed;
   bottom: 0px;
   display: flex;
