@@ -1,19 +1,28 @@
 <template>
+  <SidebarNavigation />
   <div class="container">
     <SearchboxHeader />
     <main class="content">
       <template>
-        <slot name="content"></slot>
+        <slot name="content">
+          <router-view></router-view>
+        </slot>
       </template>
     </main>
+  <slot name="player"></slot>
   </div>
+  
+
 </template>
 
 <script>
-import SearchboxHeader from "./SearchboxHeader.vue";
+import SearchboxHeader from "../components/SearchboxHeader.vue";
+import SidebarNavigation from "./SidebarNavigation.vue";
+
 export default {
   components: {
     SearchboxHeader,
+    SidebarNavigation,
   },
 };
 </script>

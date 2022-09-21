@@ -8,10 +8,10 @@
         :playlist-name="item.name"
         :playlist-image="item.image"
         :playlist-author="item.author"
-        
       />
     </section>
   </main>
+  
 </template>
 
 <script>
@@ -20,7 +20,6 @@ import PlaylistCard from "./PlaylistCard.vue";
 export default {
   data() {
     return {
-      
       playlists: [
         {
           image: "Rectangle 14.svg",
@@ -62,7 +61,6 @@ export default {
           name: "لیست پخش۳",
           author: "ایجاد شده توسط مصطفی",
         },
-        
       ],
     };
   },
@@ -72,7 +70,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .playlists {
   display: flex;
   flex-wrap: wrap;
@@ -84,7 +82,7 @@ export default {
 h1 {
   color: white;
   font-weight: 700;
-font-size: 28px;
-line-height: 24px;
+  font-size: 28px;
+  line-height: 24px;
 }
 </style>

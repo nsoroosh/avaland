@@ -1,26 +1,22 @@
 <template>
-  <MainContent>
-    <template v-slot:content>
-      <UploadContext />
-      <UploadMusicInfo />
-    </template>
-  </MainContent>
+  <UploadContext />
+  <UploadMusicInfo />
 </template>
-  
-  <script>
-import MainContent from "./MainContent.vue";
-import UploadContext from "./UploadContext.vue";
-import UploadMusicInfo from "./UploadMusicInfo.vue";
+
+<script>
+// import MainContent from "../layout/MainContent.vue";
+import UploadContext from "../components/UploadContext.vue";
+import UploadMusicInfo from "../components/UploadMusicInfo.vue";
 
 export default {
   components: {
-    MainContent,
+    // MainContent,
     UploadContext,
     UploadMusicInfo,
   },
 };
 </script>
-  
+
 <style lang="scss">
 $primary-color: #fc8f22;
 $secondry-color: #999999;

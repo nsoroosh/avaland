@@ -115,7 +115,11 @@
       <div class="playlists__title">فیلتر لیست پخش ها</div>
       <div class="playlists__name">
         <div class="playlists__new-name">
-          <input type="text" class="playlists__input-name" style="height: 48px;" />
+          <input
+            type="text"
+            class="playlists__input-name"
+            style="height: 48px"
+          />
         </div>
       </div>
     </div>

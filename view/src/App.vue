@@ -1,24 +1,13 @@
 <template>
-<SidebarNavigation />
-  <!-- <PlayListArchive /> -->
-  <!-- <UploadMusic /> -->
-  <!-- <MusicDetails /> -->
-  <ListPlaylists />
-  
+  <MainContent />
 </template>
 
 <script>
-import SidebarNavigation from "./components/SidebarNavigation.vue";
-// import MainContent from "./components/MainContent.vue";
-// import PlayListArchive from "./components/PlayListArchive.vue";
-// import UploadMusic from "./components/UploadMusic.vue";
-// import MusicDetails from "./components/MusicDetails.vue";
-import ListPlaylists from "./components/ListPlaylists.vue"
+import MainContent from "./layout/MainContent.vue";
 export default {
   name: "App",
   components: {
-    SidebarNavigation,
-    ListPlaylists
+    MainContent,
   },
 };
 </script>
@@ -103,7 +92,6 @@ label,
 ul,
 li,
 button {
-    font-family: 'Peyda';
+  font-family: "Peyda";
 }
-
 </style>

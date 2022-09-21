@@ -3,19 +3,15 @@
     <img src="../assets/logo.png" alt="" />
 
     <div class="nav">
-      <div
-        class="nav__item"
-        :class="index == 0 && 'nav__item--active'"
-        v-for="(menu, index) in menus"
-        :key="index"
-      >
-        <p class="nav__desc">{{ menu.name }}</p>
-        <img
-          :src="require(`../assets/img/${menu.icon}`)"
-          alt=""
-          class="nav__icon"
-        />
-      </div>
+      <router-link :to="menu.link"  v-for="(menu, index) in menus" :key="index" class="nav__item">
+          <p class="nav__desc">{{ menu.name }}</p>
+
+          <img
+            :src="require(`../assets/img/${menu.icon}`)"
+            alt=""
+            class="nav__icon"
+          />
+      </router-link>
     </div>
   </aside>
 </template>
@@ -84,7 +80,7 @@ $background-color: #010101;
 
     &__item {
       transition: all 0.3s;
-
+      text-decoration: none;
       display: flex;
       flex-direction: row;
       justify-content: flex-end;

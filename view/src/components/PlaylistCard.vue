@@ -1,51 +1,53 @@
 <template>
   <div class="playlist">
-                     <img  :src="require(`@/assets/img/posters/${playlistImage}`)" alt="">
-                     <div class="playlist__description">
-                         <div class="playlist__title">
-                            <h3 class="playlist__h3"> {{playlistName}}</h3>
-                            <span class="playlist__span">ایجاد شده توسط مصطفی</span>
-                         </div>
-                         
-                        <div class="playlist__option" @click="showModal">
-                            <img src="../assets/img/icon/bold/more.svg" alt="" class="playlist__icon-more" >
-                            <PlaylistOptionModal :styles="count"/>
-                        </div>
-                    </div>
-                 </div>
+    <img :src="require(`@/assets/img/posters/${playlistImage}`)" alt="" />
+    <div class="playlist__description">
+      <div class="playlist__title">
+        <h3 class="playlist__h3">{{ playlistName }}</h3>
+        <span class="playlist__span">ایجاد شده توسط مصطفی</span>
+      </div>
+
+      <div class="playlist__option" @click="showModal">
+        <img
+          src="../assets/img/icon/bold/more.svg"
+          alt=""
+          class="playlist__icon-more"
+        />
+        <PlaylistOptionModal :styles="count" />
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-import PlaylistOptionModal from "./PlaylistOptionModal.vue"
+import PlaylistOptionModal from "./PlaylistOptionModal.vue";
 export default {
-    data() {
+  data() {
     return {
-      count: 'none'
-    }
+      count: "none",
+    };
   },
   methods: {
-    showModal(){
-        if(this.count == 'none'){
-
-            this.count = 'block'
-        }else{
-            this.count = 'none'
-        }
-    }
+    showModal() {
+      if (this.count == "none") {
+        this.count = "block";
+      } else {
+        this.count = "none";
+      }
+    },
   },
-  
-props:{
-    playlistName:String,
-    playlistImage:String
-},
-components:{
-    PlaylistOptionModal
-},
 
-}
+  props: {
+    playlistName: String,
+    playlistImage: String,
+  },
+  components: {
+    PlaylistOptionModal,
+  },
+};
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 $primary-color: #fc8f22;
 $secondry-color: #999999;
 $background-color: #010101;
@@ -72,6 +74,5 @@ $background-color: #010101;
   &__option {
     position: relative;
   }
-  
 }
 </style>
