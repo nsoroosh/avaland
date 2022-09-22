@@ -27,7 +27,7 @@
           src="../assets/img/icon/bold/more.svg"
           alt=""
           class="more-icon"
-          @click="clickMainModal()"
+          @click="clickMainModal"
         />
       </div>
     </div>
@@ -52,48 +52,19 @@
       </span>
     </div>
     <MusicDetailModal class="poster__options" v-if="openMainModal" />
-    <UploadMusicInfo class="poster__edit-modal" v-if="openEditModal" />
-    <DeleteMusicModal class="poster__delete-modal" v-if="openTrashModal" />
-    <AddToPlaylistModal class="poster__playlist-modal" v-if="openPlaylistModal" />
+    <slot name="modals"> </slot>
   </section>
 </template>
 
-<script>
+<script setup>
+import { ref } from "vue";
 import MusicDetailModal from "./MusicDetailModal.vue";
-import UploadMusicInfo from "./UploadMusicInfo.vue";
-import DeleteMusicModal from "./DeleteMusicModal.vue";
-import AddToPlaylistModal from "./AddToPlaylistModal.vue";
 
-export default {
-  data() {
-    return {
-      openMainModal: false,
-      openEditModal: false,
-      openTrashModal: false,
-      openPlaylistModal: true,
-    };
-  },
-  methods: {
-    clickMainModal: () => {
-      this.openMainModal = !this.openMainModal;
-    },
-    clickEditModal: () => {
-      this.openEditModal = !this.openEditModal;
-    },
-    clickTrashModal: () => {
-      this.openTrashModal = !this.openTrashModal;
-    },
-    clickPlaylistModal: () => {
-      this.openPlaylistModal = !this.openPlaylistModal;
-    },
-  },
-  components: {
-    MusicDetailModal,
-    UploadMusicInfo,
-    DeleteMusicModal,
-    AddToPlaylistModal
-  },
-};
+const openMainModal = ref(false);
+
+function clickMainModal() {
+  this.openMainModal = ref(!this.openMainModal.value);
+}
 </script>
 
 <style lang="scss">

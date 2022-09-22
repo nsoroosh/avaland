@@ -11,12 +11,14 @@
           <button
             class="btn-select"
             :class="addPlaylistModal && 'playlist-modal__btn--active'"
+            @click="clickAddPlaylistModal"
           >
             انتخاب لیست پخش
           </button>
           <button
             class="btn-create"
             :class="createPlaylistModal && 'playlist-modal__btn--active'"
+            @click="clickCreatePlaylistModal"
           >
             ایجاد لیست پخش
           </button>
@@ -46,18 +48,6 @@
             <div class="playlists__music-artist">شادمهر عقیلی</div>
           </div>
         </div>
-
-        <div class="playlists__music">
-          <img
-            class="playlists__music-poster"
-            src="../assets/img/Rectangle-9.jpg"
-            alt=""
-          />
-          <div class="playlists__music-info">
-            <div class="playlists__music-name">باطل</div>
-            <div class="playlists__music-artist">شادمهر عقیلی</div>
-          </div>
-        </div>
       </div>
     </div>
 
@@ -65,7 +55,11 @@
 
     <div class="similar-music" v-if="createPlaylistModal">
       <div class="similar-music__title">آهنگ های مشابه</div>
-      <div class="similar-music__musics">
+      <div
+        class="similar-music__musics"
+        v-for="(music, index) in similarMusic"
+        :key="index"
+      >
         <div class="similar-music__music">
           <div class="similar-music__content">
             <div class="similar-music__row">
@@ -74,31 +68,13 @@
               </div>
               <div class="similar-music__col">
                 <div class="similar-music__music-info">
-                  <div class="similar-music__music-name">عوض نمی‌شی</div>
-                  <div class="similar-music__music-artist">شادمهر عقیلی</div>
+                  <div class="similar-music__music-name">{{ music.name }}</div>
+                  <div class="similar-music__music-artist">
+                    {{ music.artist }}
+                  </div>
                 </div>
                 <img
-                  src="../assets/img/posters/Rectangle-8.png"
-                  alt=""
-                  class="similar-music__poster"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="similar-music__music">
-          <div class="similar-music__content">
-            <div class="similar-music__row">
-              <div class="similar-music__add-to-playlist">
-                اضافه کردن به لیست پخش
-              </div>
-              <div class="similar-music__col">
-                <div class="similar-music__music-info">
-                  <div class="similar-music__music-name">عوض نمی‌شی</div>
-                  <div class="similar-music__music-artist">شادمهر عقیلی</div>
-                </div>
-                <img
-                  src="../assets/img/posters/Rectangle-8.png"
+                  :src="require(`../assets/img/${music.poster}`)"
                   alt=""
                   class="similar-music__poster"
                 />
@@ -126,8 +102,12 @@
 
     <div class="similar-music" v-if="addPlaylistModal">
       <div class="similar-music__title">آهنگ های مشابه</div>
-      <div class="similar-music__musics">
-        <div class="similar-music__music">
+      <div
+        class="similar-music__musics"
+        v-for="(music, index) in similarMusic"
+        :key="index"
+      >
+        <div class="similar-music__music-add">
           <div class="similar-music__content">
             <div class="similar-music__row">
               <div class="similar-music__add-to-playlist">
@@ -135,31 +115,13 @@
               </div>
               <div class="similar-music__col">
                 <div class="similar-music__music-info">
-                  <div class="similar-music__music-name">عوض نمی‌شی</div>
-                  <div class="similar-music__music-artist">شادمهر عقیلی</div>
+                  <div class="similar-music__music-name">{{ music.name }}</div>
+                  <div class="similar-music__music-artist">
+                    {{ musin.artist }}
+                  </div>
                 </div>
                 <img
-                  src="../assets/img/posters/Rectangle-8.png"
-                  alt=""
-                  class="similar-music__poster"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="similar-music__music">
-          <div class="similar-music__content">
-            <div class="similar-music__row">
-              <div class="similar-music__add-to-playlist">
-                اضافه کردن به لیست پخش
-              </div>
-              <div class="similar-music__col">
-                <div class="similar-music__music-info">
-                  <div class="similar-music__music-name">عوض نمی‌شی</div>
-                  <div class="similar-music__music-artist">شادمهر عقیلی</div>
-                </div>
-                <img
-                  src="../assets/img/posters/Rectangle-8.png"
+                  :src="require(`../assets/img/${music.poster}`)"
                   alt=""
                   class="similar-music__poster"
                 />
@@ -173,15 +135,38 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      createPlaylistModal: false,
-      addPlaylistModal: true,
-    };
+<script setup>
+import { ref } from "vue";
+
+const createPlaylistModal = ref(true);
+const addPlaylistModal = ref(false);
+
+function clickCreatePlaylistModal() {
+  this.createPlaylistModal = ref(!this.createPlaylistModal.value);
+}
+
+function clickAddPlaylistModal() {
+  this.addPlaylistModal = ref(!this.addPlaylistModal.value);
+}
+
+const similarMusic = ref([
+  {
+    name: 'باطل',
+    poster: 'posters/Rectangle-8.png',
+    artist: 'شادمهر عقیلی'
   },
-};
+  {
+    name: 'باطل',
+    poster: 'posters/Rectangle-8.png',
+    artist: 'شادمهر عقیلی'
+  },
+  {
+    name: 'باطل',
+    poster: 'posters/Rectangle-8.png',
+    artist: 'شادمهر عقیلی'
+  }
+]);
+
 </script>
 
 <style lang="scss" scoped>
@@ -396,6 +381,7 @@ export default {
       padding: 12px 10px;
       gap: 12px;
       border-radius: 10px;
+      background: #464646;
       order: 1;
       align-self: stretch;
       flex-grow: 0;
@@ -410,6 +396,12 @@ export default {
       gap: 40px;
       order: 0;
       flex-grow: 0;
+    }
+
+    __music-add {
+      background: #464646;
+      border-radius: 10px;
+      margin-bottom: 10px;
     }
 
     &__music-poster {

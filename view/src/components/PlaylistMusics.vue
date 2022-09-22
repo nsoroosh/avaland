@@ -10,7 +10,7 @@
 
     <tbody>
       <tr class="music-list__row" v-for="item in musiclist" :key="item.number">
-        <td class="music-list__num">{{item.number}}</td>
+        <td class="music-list__num">{{ item.number }}</td>
         <td class="music-list__title">
           <div class="music-list__music-profile">
             <img
@@ -19,15 +19,15 @@
               alt="MusicPoster"
             />
             <div class="music-list__artist-name">
-              <span class="music-list__name">{{item.name}}</span>
-              <span class="music-list__artist">{{item.artist}}</span>
+              <span class="music-list__name">{{ item.name }}</span>
+              <span class="music-list__artist">{{ item.artist }}</span>
             </div>
           </div>
         </td>
-        <td class="music-list__album-name">{{item.albumname}}</td>
-        <td class="music-list__release-time">{{item.releasetime}}</td>
+        <td class="music-list__album-name">{{ item.albumname }}</td>
+        <td class="music-list__release-time">{{ item.releasetime }}</td>
         <td>
-          <div class="music-list__time">{{item.time}}</div>
+          <div class="music-list__time">{{ item.time }}</div>
         </td>
         <td>
           <img
@@ -35,14 +35,14 @@
             src="../assets/img/icon/linear/heart.svg"
           />
         </td>
-        <td >
+        <td>
           <div class="music-list__btn-options" @click="showModal">
             <img
               class="music-list__options"
               src="../assets/img/icon/bold/more.svg"
             />
             <MusicOptionModal :styles="count" />
-            </div>
+          </div>
         </td>
       </tr>
 
@@ -91,58 +91,58 @@
 </template>
 
 <script>
-import MusicOptionModal from "../components/MusicOptionModal.vue"
+import MusicOptionModal from "../components/MusicOptionModal.vue";
 export default {
   data() {
     return {
       count: "none",
-      musiclist:[
+      musiclist: [
         {
-          number:'۰۱',
-          image:"profile1.jpg",
-          name:"دستبند",
-          artist:"رهام",
-          albumname:"نماهنگ",
-          releasetime:"5 روز پیش",
-          time:"۰۴:۴۲"
+          number: "۰۱",
+          image: "profile1.jpg",
+          name: "دستبند",
+          artist: "رهام",
+          albumname: "نماهنگ",
+          releasetime: "5 روز پیش",
+          time: "۰۴:۴۲",
         },
         {
-          number:'۰۱',
-          image:"profile1.jpg",
-          name:"دستبند",
-          artist:"رهام",
-          albumname:"نماهنگ",
-          releasetime:"5 روز پیش",
-          time:"۰۴:۴۲",
+          number: "۰۱",
+          image: "profile1.jpg",
+          name: "دستبند",
+          artist: "رهام",
+          albumname: "نماهنگ",
+          releasetime: "5 روز پیش",
+          time: "۰۴:۴۲",
         },
         {
-          number:'۰۱',
-          image:"profile1.jpg",
-          name:"دستبند",
-          artist:"رهام",
-          albumname:"نماهنگ",
-          releasetime:"5 روز پیش",
-          time:"۰۴:۴۲",
+          number: "۰۱",
+          image: "profile1.jpg",
+          name: "دستبند",
+          artist: "رهام",
+          albumname: "نماهنگ",
+          releasetime: "5 روز پیش",
+          time: "۰۴:۴۲",
         },
         {
-          number:'۰۱',
-          image:"profile1.jpg",
-          name:"دستبند",
-          artist:"رهام",
-          albumname:"نماهنگ",
-          releasetime:"5 روز پیش",
-          time:"۰۴:۴۲",
+          number: "۰۱",
+          image: "profile1.jpg",
+          name: "دستبند",
+          artist: "رهام",
+          albumname: "نماهنگ",
+          releasetime: "5 روز پیش",
+          time: "۰۴:۴۲",
         },
         {
-          number:'۰۱',
-          image:"profile1.jpg",
-          name:"دستبند",
-          artist:"رهام",
-          albumname:"نماهنگ",
-          releasetime:"5 روز پیش",
-          time:"۰۴:۴۲",
-        }
-      ]
+          number: "۰۱",
+          image: "profile1.jpg",
+          name: "دستبند",
+          artist: "رهام",
+          albumname: "نماهنگ",
+          releasetime: "5 روز پیش",
+          time: "۰۴:۴۲",
+        },
+      ],
     };
   },
   methods: {
@@ -154,9 +154,9 @@ export default {
       }
     },
   },
-  components:{
-    MusicOptionModal
-  }
+  components: {
+    MusicOptionModal,
+  },
 };
 </script>
 
@@ -251,7 +251,7 @@ $background-color: #010101;
     width: 24px;
     height: 24px;
   }
-  &__btn-options{
+  &__btn-options {
     position: relative;
   }
   &__pause {

@@ -5,44 +5,44 @@ const routes = [
     path: "/",
     name: "home",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
+      import(/* webpackChunkName: "home" */ "../App.vue"),
   },
   {
     path: "/about",
     name: "search",
 
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
+      import(/* webpackChunkName: "search" */ "../App.vue"),
   },
   {
     path: "/playmusic",
     name: "playmusic",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/MusicDetails.vue"),
+      import(/* webpackChunkName: "playmusic" */ "../views/MusicDetails.vue"),
   },
   {
     path: "/favorites",
     name: "favorites",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
+      import(/* webpackChunkName: "favorites" */ "../App.vue"),
   },
   {
     path: "/playlists",
     name: "playlists",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/ListPlaylists.vue"),
+      import(/* webpackChunkName: "playlists" */ "../views/ListPlaylists.vue"),
   },
   {
     path: "/upload",
     name: "upload",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/UploadMusic.vue"),
+      import(/* webpackChunkName: "upload" */ "../views/UploadMusic.vue"),
   },
   {
     path: "/playlists/:id",
     name: "playlistarchive",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/PlayListArchive.vue"),
+      import(/* webpackChunkName: "playlistarchive" */ "../views/PlayListArchive.vue"),
   },
 ];
 

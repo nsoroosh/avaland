@@ -1,6 +1,6 @@
 <template>
   <div class="modal">
-    <div class="modal__row">
+    <div class="modal__row" @click="clickPlaylistModal">
       <img
         src="../assets/img/icon/linear/receipt-square.png"
         alt=""
@@ -10,7 +10,7 @@
     </div>
     <span class="modal__row--underline"></span>
 
-    <div class="modal__row">
+    <div class="modal__row" @click="clickEditModal">
       <img
         src="../assets/img/icon/linear/edit.png"
         alt=""
@@ -20,7 +20,7 @@
     </div>
     <span class="modal__row--underline"></span>
 
-    <div class="modal__row">
+    <div class="modal__row" @click="clickTrashModal">
       <img
         src="../assets/img/icon/linear/trash.png"
         alt=""
@@ -28,11 +28,38 @@
       />
       <div class="modal__desc">حذف آهنگ</div>
     </div>
+
+    <template v-slot:modals>
+      <UploadMusicInfo class="poster__edit-modal" v-if="openEditModal" />
+      <DeleteMusicModal class="poster__delete-modal" v-if="openTrashModal" />
+      <AddToPlaylistModal
+        class="poster__playlist-modal"
+        v-if="openPlaylistModal"
+      />
+    </template>
   </div>
 </template>
 
-<script>
-export default {};
+<script setup>
+import { ref } from "vue";
+
+import UploadMusicInfo from "./UploadMusicInfo.vue";
+import DeleteMusicModal from "./DeleteMusicModal.vue";
+import AddToPlaylistModal from "./AddToPlaylistModal.vue";
+
+const openEditModal = ref(false);
+const openTrashModal = ref(false);
+const openPlaylistModal = ref(false);
+
+function clickEditModal() {
+  this.openEditModal = ref(!this.openEditModal.value);
+}
+function clickTrashModal() {
+  this.openTrashModal = ref(!this.openTrashModal.value);
+}
+function clickPlaylistModal() {
+  this.openPlaylistModal = ref(!this.openPlaylistModal.value);
+}
 </script>
 
 <style lang="scss" scoped>
@@ -67,7 +94,6 @@ $background-color: #010101;
     flex: none;
     position: relative;
     // order: 2;
-
 
     &::after {
       content: "";
