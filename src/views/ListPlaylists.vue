@@ -68,7 +68,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style >
 .playlists {
   display: flex;
   flex-wrap: wrap;

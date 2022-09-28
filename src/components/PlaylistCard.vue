@@ -50,7 +50,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
 $primary-color: #fc8f22;
 $secondry-color: #999999;
 $background-color: #010101;
