@@ -54,8 +54,8 @@ $primary-color: #fc8f22;
 $secondry-color: #999999;
 $background-color: #010101;
 .latest-musics {
-  max-width: 60vw;
-  padding: 1em;
+  max-width: 80vw;
+  padding:1em 3em;
   &__header {
     display: flex;
     align-items: center;

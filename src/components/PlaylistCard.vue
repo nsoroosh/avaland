@@ -55,10 +55,9 @@ $primary-color: #fc8f22;
 $secondry-color: #999999;
 $background-color: #010101;
 .playlist {
-  max-width: 200.5px;
-  // height: 314px;
+  max-width: 23%;
   img {
-    max-width: 200.5px;
+    max-width: 100%;
   }
   &__description {
     display: flex;
