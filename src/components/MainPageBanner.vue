@@ -43,4 +43,25 @@ export default {};
     }
   }
 }
+@media only screen and (max-width: 768px) {
+  .banner{
+   max-width: 100vw;
+    &__image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    img {
+      max-width: 7em;
+    }
+  }
+  &__title {
+    position: absolute;
+    left: 104px;
+    bottom: 0;
+    img{
+      max-width: 12em;
+    }
+  }
+  }
+}
 </style>

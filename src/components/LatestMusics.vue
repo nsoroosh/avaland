@@ -75,4 +75,13 @@ $background-color: #010101;
     flex-wrap: nowrap;
   }
 }
+@media only screen and (max-width: 768px) {
+  .latest-musics {
+  max-width: 100vw;
+  padding:0 ;
+  &__list {
+    overflow: scroll;
+  }
+  }
+}
 </style>

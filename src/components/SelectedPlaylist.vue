@@ -75,4 +75,14 @@ $background-color: #010101;
     flex-wrap: nowrap;
   }
 }
+@media only screen and (max-width: 768px) {
+  .selected-musics {
+  max-width: 100vw;
+  padding:0 ;
+  margin:0 0 200px 0;
+  &__list {
+    overflow: scroll;
+  }
+  }
+}
 </style>

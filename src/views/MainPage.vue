@@ -57,12 +57,16 @@ function ChangeT()
 .right{
   // width: 100%;
 }
+
+@media only screen and (max-width: 768px) {
 .mainpage {
-  &__banner {
-  }
-  &__latest-songs {
-  }
   &__premium-banner {
+    display: none;
   }
+  
+  &__history-favorites{
+    display: none;
+  }
+}
 }
 </style>

@@ -3,14 +3,39 @@
     <img src="../assets/logo.png" alt="" />
 
     <div class="nav">
-      <router-link :to="menu.link"  v-for="(menu, index) in menus" :key="index" class="nav__item">
-          <p class="nav__desc">{{ menu.name }}</p>
+      <router-link
+        :to="menu.link"
+        v-for="(menu, index) in menus"
+        :key="index"
+        class="nav__item"
+      >
+        <p class="nav__desc">{{ menu.name }}</p>
 
-          <img
-            :src="require(`../assets/img/${menu.icon}`)"
-            alt=""
-            class="nav__icon"
-          />
+        <img
+          :src="require(`../assets/img/${menu.icon}`)"
+          alt=""
+          class="nav__icon"
+        />
+      </router-link>
+    </div>
+  </aside>
+  <aside class="mobilesidebar">
+    <img src="../assets/logo.png" alt="" />
+
+    <div class="nav">
+      <router-link
+        :to="menu.link"
+        v-for="(menu, index) in mobilemenus"
+        :key="index"
+        class="nav__item"
+      >
+        <p class="nav__desc">{{ menu.name }}</p>
+
+        <img
+          :src="require(`../assets/img/${menu.icon}`)"
+          alt=""
+          class="nav__icon"
+        />
       </router-link>
     </div>
   </aside>
@@ -49,13 +74,37 @@ const menus = [
     link: "/upload",
   },
 ];
+const mobilemenus = [
+  {
+    name: "صفحه اصلی",
+    icon: "icon/linear/home-2.svg",
+    link: "/",
+  },
+  {
+    name: "پخش آهنگ",
+    icon: "icon/linear/play.svg",
+    link: "/playmusic",
+  },
+  {
+    name: "لیست پخش منتخب",
+    icon: "icon/linear/receipt-square.svg",
+    link: "/playlists",
+  },
+  {
+    name: "آپلود آهنگ",
+    icon: "icon/linear/frame.svg",
+    link: "/upload",
+  },
+];
 </script>
 
 <style lang="scss">
 $primary-color: #fc8f22;
 $secondry-color: #999999;
 $background-color: #010101;
-
+.mobilesidebar{
+  display: none;
+}
 .sidebar {
   direction: ltr;
   display: flex;
@@ -132,6 +181,69 @@ $background-color: #010101;
       & path {
         stroke: $primary-color !important;
         fill: $primary-color !important;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 768px) {
+  .sidebar{
+    display: none;
+  }
+  .mobilesidebar {
+    direction: ltr;
+    display: flex;
+    // flex-direction: row-reverse;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0px 16px;
+    gap: 8px;
+    width: 100%;
+    height: 64px;
+    position: fixed;
+    right: 0px;
+    z-index: 10;
+    bottom: 0px;
+    background: rgba(70, 70, 70, 0.5);
+    backdrop-filter: blur(15px);
+    img {
+      display: none;
+    }
+    .nav {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      padding: 0px;
+      gap: 32px;
+      &__item {
+      transition: all 0.3s;
+      text-decoration: none;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 0px 16px 0px 0px;
+      gap: 16px;
+      height: 32px;
+      align-self: stretch;
+      }
+      &__desc {
+        font-family: "Peyda";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 12px;
+        color: $secondry-color;
+      }
+
+      &__icon {
+        width: 24px;
+        height: 24px;
+        box-sizing: border-box;
+      }
+
+      &__item--active,
+      &__item:hover {
+        border-right: none;
       }
     }
   }

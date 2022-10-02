@@ -1,6 +1,10 @@
 <template>
   <div class="music-card">
-    <img :src="require(`@/assets/img/posters/${musicImage}`)" alt="" />
+    <img
+      class="music-card__image"
+      :src="require(`@/assets/img/posters/${musicImage}`)"
+      alt=""
+    />
     <div class="music-card__description">
       <div class="music-card__title">
         <router-link to="/music/:id" class="music-card__title">
@@ -54,6 +58,33 @@ $background-color: #010101;
   }
   &__option {
     position: relative;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .music-card {
+    position: relative;
+    &__image {
+    }
+    &__description {
+      position: absolute;
+      bottom: 6px;
+      left: 0;
+      background: rgba(70, 70, 70, 0.4);
+      backdrop-filter: blur(2px);
+      width: 100%;
+      border-radius: 0 0 12px 12px;
+    }
+    &__title {
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 0px;
+    }
+    &__span {
+      font-weight: 500;
+      font-size: 10px;
+      line-height: 10px;
+      color: rgba(255, 255, 255, 0.7);
+    }
   }
 }
 </style>
