@@ -75,7 +75,7 @@ $background-color: #010101;
   isolation: isolate;
   width: 231px;
   height: 168px;
-
+  // position: relative;
   background: rgba(70, 70, 70, 0.7);
   backdrop-filter: blur(12px);
   /* Note: backdrop-filter has minimal browser support */
@@ -125,6 +125,11 @@ $background-color: #010101;
     height: 24px;
     flex: none;
     order: 1;
+  }
+  .poster{
+    transform: translate(1000em);
+    &__edit-modal{
+    }
   }
 }
 </style>
