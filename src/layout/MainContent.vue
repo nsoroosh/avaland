@@ -41,4 +41,10 @@ $background-color: #010101;
   margin: 0px 3%;
   // height: 100vh;
 }
+@media only screen and (max-width: 768px) {
+  .content {
+  margin: 0px 0;
+  //
+  }
+}
 </style>
