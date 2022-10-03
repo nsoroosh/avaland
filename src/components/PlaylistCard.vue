@@ -50,7 +50,7 @@ export default {
 };
 </script>
 
-<style lang="scss" >
+<style lang="scss">
 $primary-color: #fc8f22;
 $secondry-color: #999999;
 $background-color: #010101;
@@ -76,6 +76,39 @@ $background-color: #010101;
   }
   &__option {
     position: relative;
+  }
+}@media only screen and (max-width: 768px) {
+
+  .playlist {
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    border-top: 0.5px solid rgba(163, 163, 163, 0.2);
+gap: 10px;
+padding: 10px 0;
+    img {
+      max-width: 23%;
+    }
+    &__icon-more {
+      width: 100px;
+      height: 100%;
+      transform: translateY(190px);
+    }
+    &__h3 {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px;
+    }
+    &__span {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 24px;
+    }
+    &__description {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
   }
 }
 </style>

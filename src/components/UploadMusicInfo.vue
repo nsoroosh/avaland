@@ -293,4 +293,18 @@ $background-color: #010101;
     z-index: 999;
   }
 }
+@media only screen and (max-width: 768px) {
+  .form-group {
+    width: 90vw;
+  }
+  .row {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 0px;
+    gap: 60px;
+  }
+  input{
+    height: 56px;
+  }
+}
 </style>

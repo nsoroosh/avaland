@@ -262,4 +262,26 @@ $background-color: #010101;
     border-radius: 50%;
   }
 }
+@media only screen and (max-width: 768px) {
+  th {
+    display: none;
+  }
+  tr {
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.3);
+  }
+  .music-list {
+    &__album-name {
+      display: none;
+    }
+    &__release-time {
+      display: none;
+    }
+    &__time {
+      display: none;
+    }
+    &__like {
+      display: none;
+    }
+  }
+}
 </style>

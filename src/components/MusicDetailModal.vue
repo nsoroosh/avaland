@@ -75,7 +75,7 @@ $background-color: #010101;
   isolation: isolate;
   width: 231px;
   height: 168px;
-
+  // position: relative;
   background: rgba(70, 70, 70, 0.7);
   backdrop-filter: blur(12px);
   /* Note: backdrop-filter has minimal browser support */
@@ -125,6 +125,52 @@ $background-color: #010101;
     height: 24px;
     flex: none;
     order: 1;
+  }
+  .poster{
+    transform: translate(1000em);
+    &__edit-modal{
+    }
+  }
+}
+@media only screen and (max-width: 768px) {
+  .modal{
+    width: 100vw;
+    &__row {
+    display: flex;
+    flex-direction: row-reverse;
+    // align-items: flex-start;
+    padding: 0px 14px;
+    gap: 10px;
+    flex: none;
+    position: relative;
+    // order: 2;
+
+    &::after {
+      content: "";
+      width: 100vw;
+      
+    }
+  }
+  .poster{
+    transform: translate(1000em);
+    &__edit-modal{
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      z-index: 200;
+    }
+    &__playlist-modal{
+      width: 100vw;
+      position: fixed;
+      bottom: 0;
+      right: 0;
+    }
+    &__delete-modal{
+      position: fixed;
+      bottom: 0;
+      right: 0;
+    }
+  }
   }
 }
 </style>

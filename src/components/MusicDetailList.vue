@@ -120,8 +120,8 @@ $background-color: #010101;
   }
 
   &__img {
-    width: 196.4px;
-    height: 204px;
+    width: 20vw;
+  aspect-ratio: 1/1;
     border-radius: 16px;
   }
 
@@ -155,6 +155,32 @@ $background-color: #010101;
     position: absolute;
     left: 10px;
     margin-right: 2%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .playlist{
+    &__list {
+      flex-direction: column;
+    }
+    &__item {
+      flex-direction: row;
+      align-items: baseline;
+      // justify-content: space-between;
+      width: 100vw;
+    }
+    &__arrow-right {
+    display: none;
+  }
+
+  &__arrow-left {
+    display: none;
+  }
+   &__music-info {
+     width: 80%;
+    justify-content: space-between;
+  
+    //  align-items: center;
+   }
   }
 }
 </style>

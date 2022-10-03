@@ -1,7 +1,7 @@
 <template>
   <div class="selected-musics">
     <div class="selected-musics__header">
-      <h2 class="selected-musics__title">لیست پخش منتخب</h2>
+      <h2 class="selected-musics__title">محبوب ترین لیست های پخش</h2>
       <span class="selected-musics__more"> مشاهده همه </span>
     </div>
 
@@ -79,7 +79,7 @@ $background-color: #010101;
   .selected-musics {
   max-width: 100vw;
   padding:0 ;
-  margin:0 0 200px 0;
+  margin:0 0 0 0;
   &__list {
     overflow: scroll;
   }

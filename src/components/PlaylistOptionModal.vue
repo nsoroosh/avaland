@@ -31,8 +31,7 @@ export default {
   background: rgba(70, 70, 70, 0.7);
   backdrop-filter: blur(17px);
   border-radius: 10px;
-}
-.option-modal {
+
   &__trash {
     border-bottom: #999999 1px solid;
     height: 50%;
@@ -57,6 +56,16 @@ export default {
     img {
       margin: 4px;
     }
+  }
+}
+@media only screen and (max-width: 768px) {
+  .option-modal {
+    width: 100vw;
+    height: 124px;
+    left: 0px;
+    bottom: 0;
+    position: fixed;
+    z-index: 20;
   }
 }
 </style>

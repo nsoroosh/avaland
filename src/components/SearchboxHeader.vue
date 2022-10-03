@@ -146,4 +146,20 @@ header {
     }
   }
 }
+@media only screen and (max-width: 768px) {
+  header{
+    width: 100vw;
+   .head{
+     width: 100vw;
+    &__profile{
+      display: none;
+    }
+    &__search-fillter{
+      display: none;
+    }
+    
+  }
+  }
+  
+}
 </style>

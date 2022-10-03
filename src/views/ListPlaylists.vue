@@ -1,5 +1,9 @@
 <template>
   <main class="content">
+    <div class="favorite-list">
+
+  <FavoritePlaylists/>
+    </div>
     <h1>لیست های پخش</h1>
     <section class="playlists">
       <PlaylistCard
@@ -15,6 +19,7 @@
 
 <script>
 import PlaylistCard from "../components/PlaylistCard.vue";
+import FavoritePlaylists from "../components/FavoritePlaylists.vue"
 export default {
   data() {
     return {
@@ -64,16 +69,20 @@ export default {
   },
   components: {
     PlaylistCard,
+    FavoritePlaylists
   },
 };
 </script>
 
-<style >
+<style>
+.favorite-list{
+  display: none;
+}
 .playlists {
   display: flex;
   flex-wrap: wrap;
   padding: 24px 32px;
-  gap:1em;
+  gap: 1em;
   background-color: rgba(70, 70, 70, 0.4);
   border-radius: 16px;
 }
@@ -90,5 +99,22 @@ template {
 
 .more-icon {
   rotate: 90deg;
+}
+@media only screen and (max-width: 768px) {
+  .favorite-list{
+    display: block;
+  }
+  .content {
+    width: 100%;
+  }
+  .playlists {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 24px 32px;
+    gap: 1em;
+    background-color: rgba(70, 70, 70, 0.4);
+    border-radius: 0;
+  }
 }
 </style>
