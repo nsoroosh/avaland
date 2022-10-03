@@ -75,7 +75,7 @@ $background-color: #010101;
     position: relative;
   }
   &__image {
-    width: 200px;
+    width: 20vw;
     border-radius: 30px;
   }
   &__btn-play {

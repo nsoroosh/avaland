@@ -92,8 +92,8 @@ $background-color: #010101;
   position: relative;
 
   &__image {
-    width: 264px;
-    height: 250px;
+    width: 20vw;
+    aspect-ratio: 1/1;
     border-radius: 30px;
   }
 
