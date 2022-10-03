@@ -1,6 +1,7 @@
 <template>
   <section class="poster">
-    <figure>
+    <div class="poster__image-desc">
+<figure>
       <img
         src="../assets/../assets/img/Rectangle-9.jpg"
         class="poster__image"
@@ -40,6 +41,8 @@
        
       </div>
     </div>
+    </div>
+    
     <div class="poster__lyrics">
       <p>
         اون که با خودخواهیاش این عشقو باطل کرد بهم بگو تو بودی یا من اون که
@@ -90,7 +93,9 @@ $background-color: #010101;
   display: flex;
   align-items: center;
   position: relative;
-
+  &__image-desc{
+    display: flex;
+  }
   &__image {
     width: 20vw;
     aspect-ratio: 1/1;
@@ -207,6 +212,20 @@ $background-color: #010101;
 
   .music-info__title {
     display: none;
+  }
+  
+}
+@media only screen and (max-width: 768px) {
+  .poster{
+    flex-direction: column;
+    justify-content: space-around;
+    height: 420px;
+    &__btn-play {
+       right: 0px;
+    bottom: 50px;
+    transform: translateX(-350px);
+    // transform: translateY(100px);
+    }
   }
 }
 </style>
