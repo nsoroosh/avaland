@@ -226,6 +226,13 @@ $background-color: #010101;
     transform: translateX(-350px);
     // transform: translateY(100px);
     }
+    &__options {
+    position: fixed;
+    width: 100vw;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+  }
   }
 }
 </style>
