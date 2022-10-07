@@ -6,9 +6,24 @@
     </div>
 
     <div class="player__controler">
-      <img class="player__controler-previous" src="../assets/img/icon/bold/previous.svg" alt="" srcset="" />
-      <img class="player__controler-pause" src="../assets/img/icon/bold/puseButtton.svg" alt="" srcset="" />
-      <img class="player__controler-next" src="../assets/img/icon/bold/next.svg" alt="" srcset="" />
+      <img
+        class="player__controler-previous"
+        src="../assets/img/icon/bold/previous.svg"
+        alt=""
+        srcset=""
+      />
+      <img
+        class="player__controler-pause"
+        src="../assets/img/icon/bold/puseButtton.svg"
+        alt=""
+        srcset=""
+      />
+      <img
+        class="player__controler-next"
+        src="../assets/img/icon/bold/next.svg"
+        alt=""
+        srcset=""
+      />
 
       <span class="player__main-time">۴:۵۹</span>
       <div class="player__control-bar">
@@ -16,7 +31,10 @@
         <div class="player__progsive-button"></div>
       </div>
       <span class="player__left-time">۴:۵۹</span>
-      <img class="player__volume-icon" src="../assets/img/icon/bold/volume-high.svg" />
+      <img
+        class="player__volume-icon"
+        src="../assets/img/icon/bold/volume-high.svg"
+      />
 
       <div class="player__volume-bar">
         <div class="player__volume-level"></div>
@@ -35,7 +53,6 @@
       />
     </div>
   </div>
-  
 </template>
 
 <script>
@@ -55,7 +72,7 @@ $background-color: #010101;
   height: 90px;
   width: 100%;
   position: fixed;
-  bottom: 63px;
+  bottom: 0;
   display: flex;
   align-items: center;
   // flex-direction: row-reverse;
@@ -147,44 +164,44 @@ $background-color: #010101;
   }
 }
 @media only screen and (max-width: 768px) {
-   .player{
-     width: 100vw;
-     height: 48px;
-     &__volume-icon{
-       display: none;
-     }
-     &__options{
-       display: none;
-     }
-     &__main-time{
-       display: none;
-     }
-     &__control-bar{
-       display: none;
-     }
-     &__left-time{
-       display: none;
-     }
-     &__volume-bar{
-       display: none;
-     }
-     &__controler-previous{
-       display: none;
-     }
-     &__controler-pause{
+  .player {
+    width: 100vw;
+    height: 48px;
+    bottom: 63px;
+    &__volume-icon {
+      display: none;
+    }
+    &__options {
+      display: none;
+    }
+    &__main-time {
+      display: none;
+    }
+    &__control-bar {
+      display: none;
+    }
+    &__left-time {
+      display: none;
+    }
+    &__volume-bar {
+      display: none;
+    }
+    &__controler-previous {
+      display: none;
+    }
+    &__controler-pause {
       //  background-color: none;
-     }
-     &__controler-next{
-       display: none;
-     }&__pic{
-       width: 32px;
-height: 32px;
-border-radius: 8px;
-     }
-     &__artist-name{
-
-     }
-   }
-
+    }
+    &__controler-next {
+      display: none;
+    }
+    &__pic {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+    }
+    &__artist-name {
+    }
+  }
 }
 </style>

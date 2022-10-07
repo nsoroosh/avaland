@@ -15,18 +15,22 @@
       <h2 class="poster__title">گلچین شاد مجلسی آخر هفته ها</h2>
       <div class="poster__detail">
         <img src="../assets/img/icon/linear/music-filter.svg" />
-        <span>۱۲۰ ترانه </span>
+        <span>{{ $route.params.id }}</span>
         <span class="poster__seperator">|</span>
         <img src="../assets/img/icon/linear/clock.svg" />
         <span>۶ ساعت و ۴۰ دقیقه و ۲۱ ثانیه</span>
       </div>
       <div class="poster__buttons">
-          <img src="../assets/img/icon/linear/heart.svg" alt="">
-          <img src="../assets/img/icon/linear/share.svg" alt="">
-          <div @click="showModal" class="poster__more">
-          <img src="../assets/img/icon/bold/more.svg" alt="" class="poster__btn-more" />
-          <PlaylistOptionModal :styles="count"/>
-          </div>
+        <img src="../assets/img/icon/linear/heart.svg" alt="" />
+        <img src="../assets/img/icon/linear/share.svg" alt="" />
+        <div @click="showModal" class="poster__more">
+          <img
+            src="../assets/img/icon/bold/more.svg"
+            alt=""
+            class="poster__btn-more"
+          />
+          <PlaylistOptionModal :styles="count" />
+        </div>
       </div>
     </div>
   </section>
@@ -35,6 +39,10 @@
 <script>
 import PlaylistOptionModal from "../components/PlaylistOptionModal.vue";
 export default {
+   mounted() {
+    this.getmusiclist(this.$route.params.id)
+    console.log(this.getmusiclist());
+  },
   data() {
     return {
       count: "none",
@@ -48,15 +56,34 @@ export default {
         this.count = "none";
       }
     },
+  async  getmusiclist(id) {
+      var axios = require("axios");
+
+      var config = {
+        method: "get",
+        url: `localhost:8000/playlist/musics?id=${id}`,
+        headers: {
+          Cookie:
+            "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aW1lIjoxNjY0NzE4MzAzMzc0LCJ1c2VybmFtZSI6InRlc3QiLCJwYXNzd29yZCI6IjExMTEiLCJpYXQiOjE2NjQ3MTgzMDN9.Xx4DaAW2MT3aJUUjSFq_YtYpdBeWcYDp4tFf-yunITc; Expires=Sun, 02 Oct 2022 13:45:13 GMT; Path=/; Domain=127.0.0.1",
+        },
+      };
+
+    await  axios(config)
+        .then(function (response) {
+          console.log(JSON.stringify(response.data));
+          return response.data.message
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    },
   },
 
-  
   components: {
     PlaylistOptionModal,
   },
 };
 </script>
-
 
 <style lang="scss">
 $primary-color: #fc8f22;
@@ -75,7 +102,7 @@ $background-color: #010101;
     position: relative;
   }
   &__image {
-    width: 20vw;
+    width: 15vw;
     border-radius: 30px;
   }
   &__btn-play {
@@ -128,12 +155,12 @@ $background-color: #010101;
   &__buttons {
     display: flex;
     align-items: center;
-    img{
+    img {
       margin: 10px;
     }
   }
-  &__more{
-   position: relative;
+  &__more {
+    position: relative;
   }
   &__btn-more {
     width: 24px;

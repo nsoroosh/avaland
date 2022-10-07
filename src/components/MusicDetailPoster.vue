@@ -97,7 +97,7 @@ $background-color: #010101;
     display: flex;
   }
   &__image {
-    width: 20vw;
+    width: 10vw;
     aspect-ratio: 1/1;
     border-radius: 30px;
   }

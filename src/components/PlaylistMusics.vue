@@ -90,74 +90,16 @@
   </table>
 </template>
 
-<script>
+<script setup>
 import MusicOptionModal from "../components/MusicOptionModal.vue";
-export default {
-  data() {
-    return {
-      count: "none",
-      musiclist: [
-        {
-          number: "۰۱",
-          image: "profile1.jpg",
-          name: "دستبند",
-          artist: "رهام",
-          albumname: "نماهنگ",
-          releasetime: "5 روز پیش",
-          time: "۰۴:۴۲",
-        },
-        {
-          number: "۰۱",
-          image: "profile1.jpg",
-          name: "دستبند",
-          artist: "رهام",
-          albumname: "نماهنگ",
-          releasetime: "5 روز پیش",
-          time: "۰۴:۴۲",
-        },
-        {
-          number: "۰۱",
-          image: "profile1.jpg",
-          name: "دستبند",
-          artist: "رهام",
-          albumname: "نماهنگ",
-          releasetime: "5 روز پیش",
-          time: "۰۴:۴۲",
-        },
-        {
-          number: "۰۱",
-          image: "profile1.jpg",
-          name: "دستبند",
-          artist: "رهام",
-          albumname: "نماهنگ",
-          releasetime: "5 روز پیش",
-          time: "۰۴:۴۲",
-        },
-        {
-          number: "۰۱",
-          image: "profile1.jpg",
-          name: "دستبند",
-          artist: "رهام",
-          albumname: "نماهنگ",
-          releasetime: "5 روز پیش",
-          time: "۰۴:۴۲",
-        },
-      ],
-    };
-  },
-  methods: {
-    showModal() {
-      if (this.count == "none") {
-        this.count = "block";
-      } else {
-        this.count = "none";
-      }
-    },
-  },
-  components: {
-    MusicOptionModal,
-  },
-};
+import {  onMounted } from 'vue'
+
+
+
+onMounted(() => {
+  
+})
+
 </script>
 
 <style lang="scss">

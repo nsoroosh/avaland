@@ -19,32 +19,59 @@
       </div>
 
       <div class="mainpage__history-favorites">
-        <FavoriteHistorySwitch @some-event="ChangeT"/>
-        <FavoriteList v-if="!active.state"/>
-        <HistoryList v-if="active.state"/>
+        <FavoriteHistorySwitch @some-event="ChangeT" />
+        <FavoriteList v-if="!state" />
+        <HistoryList v-if="state" />
       </div>
     </div>
   </div>
 </template>
 
-<script setup>
+<script >
 import MainPageBanner from "../components/MainPageBanner.vue";
 import PremiumBanner from "../components/PremiumBanner.vue";
-import LatestMusics from "../components/LatestMusics.vue"
-import SelectedPlaylist from "../components/SelectedPlaylist.vue"
-import FavoriteHistorySwitch from "../components/FavoriteHistorySwitch.vue"
-import FavoriteList from "../components/FavoriteList.vue"
-import HistoryList from "../components/HistoryList.vue"
+import LatestMusics from "../components/LatestMusics.vue";
+import SelectedPlaylist from "../components/SelectedPlaylist.vue";
+import FavoriteHistorySwitch from "../components/FavoriteHistorySwitch.vue";
+import FavoriteList from "../components/FavoriteList.vue";
+import HistoryList from "../components/HistoryList.vue";
+// import { onMounted, reactive } from "vue";
 
-import { reactive } from "@vue/reactivity";
-const active =reactive({
-  state:true
-})
-function ChangeT()
-    {
-      active.state= !active.state;
-      console.log(active.state);
-    }
+export default {
+  mounted() {
+    this.getPlaylists()
+   
+   console.log(this.allplaylists);
+  },
+  computed: {
+        allplaylists() {
+            return this.$store.getters.playlists
+        }
+    },
+    data: () => {
+        return {
+          playlists:[]
+        };
+    },
+    methods: {
+        getPlaylists(id) {
+            this.$store.dispatch("getPlaylists", id);
+        },
+        get(){
+          this.playlists=this.allplaylists()
+        }
+    },
+  components:{
+    MainPageBanner,
+    PremiumBanner,
+    LatestMusics,
+    SelectedPlaylist,
+    FavoriteList,
+    FavoriteHistorySwitch,
+    HistoryList
+  }
+}
+
 </script>
 
 <style lang="scss">
@@ -54,19 +81,19 @@ function ChangeT()
 .bottom {
   display: flex;
 }
-.right{
+.right {
   // width: 100%;
 }
 
 @media only screen and (max-width: 768px) {
-.mainpage {
-  &__premium-banner {
-    display: none;
+  .mainpage {
+    &__premium-banner {
+      display: none;
+    }
+
+    &__history-favorites {
+      display: none;
+    }
   }
-  
-  &__history-favorites{
-    display: none;
-  }
-}
 }
 </style>

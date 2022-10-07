@@ -8,70 +8,45 @@
     <section class="playlists">
       <PlaylistCard
         v-for="item in playlists"
-        :key="item.name"
+        :key="item.playlist-id"
         :playlist-name="item.name"
         :playlist-image="item.image"
-        :playlist-author="item.author"
+        :playlist-author="item.creator"
+        :playlist-id="item.playlist-id"
       />
     </section>
   </main>
 </template>
 
-<script>
+<script >
 import PlaylistCard from "../components/PlaylistCard.vue";
 import FavoritePlaylists from "../components/FavoritePlaylists.vue"
+import { mapActions, mapState } from 'vuex';
 export default {
   data() {
     return {
-      playlists: [
-        {
-          image: "Rectangle 14.svg",
-          name: "لیست پخش۳",
-          author: "ایجاد شده توسط مصطفی",
-        },
-        {
-          image: "Rectangle 14.svg",
-          name: "لیست پخش۳",
-          author: "ایجاد شده توسط مصطفی",
-        },
-        {
-          image: "Rectangle 14.svg",
-          name: "لیست پخش۳",
-          author: "ایجاد شده توسط مصطفی",
-        },
-        {
-          image: "Rectangle 14.svg",
-          name: "لیست پخش۳",
-          author: "ایجاد شده توسط مصطفی",
-        },
-        {
-          image: "Rectangle 14.svg",
-          name: "لیست پخش۳",
-          author: "ایجاد شده توسط مصطفی",
-        },
-        {
-          image: "Rectangle 14.svg",
-          name: "لیست پخش۳",
-          author: "ایجاد شده توسط مصطفی",
-        },
-        {
-          image: "Rectangle 14.svg",
-          name: "لیست پخش۳",
-          author: "ایجاد شده توسط مصطفی",
-        },
-        {
-          image: "Rectangle 14.svg",
-          name: "لیست پخش۳",
-          author: "ایجاد شده توسط مصطفی",
-        },
-      ],
+      
     };
   },
-  components: {
-    PlaylistCard,
-    FavoritePlaylists
+  computed: {
+    ...mapState("playlist", ["playlists"]),
   },
-};
+  methods: {
+    ...mapActions("playlist", ["get"]),
+  },
+  mounted(){
+    this.get()
+    console.log(this.playlists);
+  },
+  
+    
+  components:{
+   PlaylistCard,
+   FavoritePlaylists
+  }
+}
+
+
 </script>
 
 <style>
