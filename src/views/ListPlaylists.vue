@@ -25,7 +25,48 @@ import { mapActions, mapState } from 'vuex';
 export default {
   data() {
     return {
-      
+      playlists:[
+        {name:"مهام",
+        image:"Rectangle 14.svg",
+        creator:"ایهام",
+        
+        },
+        {name:"مهام",
+        image:"Rectangle 14.svg",
+        creator:"ایهام",
+        
+        },
+        {name:"مهام",
+        image:"Rectangle 14.svg",
+        creator:"ایهام",
+        
+        },
+        {name:"مهام",
+        image:"Rectangle 14.svg",
+        creator:"ایهام",
+        
+        },
+        {name:"مهام",
+        image:"Rectangle 14.svg",
+        creator:"ایهام",
+        
+        },
+        {name:"مهام",
+        image:"Rectangle 14.svg",
+        creator:"ایهام",
+        
+        },
+        {name:"مهام",
+        image:"Rectangle 14.svg",
+        creator:"ایهام",
+        
+        },
+        {name:"مهام",
+        image:"Rectangle 14.svg",
+        creator:"ایهام",
+        
+        }
+      ]
     };
   },
   computed: {
